@@ -1,0 +1,114 @@
+---
+import {
+  SiReact,
+  SiMongodb,
+  SiAstro,
+  SiTypescript,
+  SiNodedotjs,
+  SiNextdotjs,
+  SiCss,
+  SiGit,
+  SiExpress,
+} from "react-icons/si";
+
+import IconWrapper from "./IconWrapper";
+---
+
+<section id="tecnologias" class="py-24 px-8 bg-bg-primary">
+  <div class="max-w-7xl mx-auto">
+    <h2
+      class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-12 text-center bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
+    >
+      Technologies
+    </h2>
+    <div
+      class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-6 max-w-6xl mx-auto"
+    >
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-[#61DAFB]">
+          <IconWrapper Icon={SiReact} />
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">React</h3>
+      </div>
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-[#47A248]">
+          <IconWrapper Icon={SiMongodb} />
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">MongoDB</h3>
+      </div>
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-[#FF5D01]">
+          <IconWrapper Icon={SiAstro} />
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">Astro</h3>
+      </div>
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-[#3178C6]">
+          <IconWrapper Icon={SiTypescript} />
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">TypeScript</h3>
+      </div>
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-[#339933]">
+          <IconWrapper Icon={SiNodedotjs} />
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">Node.js</h3>
+      </div>
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-white">
+          <IconWrapper Icon={SiNextdotjs} />
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">Next.js</h3>
+      </div>
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-[#1572B6]">
+          <IconWrapper Icon={SiCss} />
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">CSS/SCSS</h3>
+      </div>
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-[#F05032]">
+          <IconWrapper Icon={SiGit} />
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">Git</h3>
+      </div>
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-white">
+          <IconWrapper Icon={SiExpress} />
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">Express</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    #tecnologias .grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    #tecnologias .bg-card-bg {
+      padding: 1.5rem;
+    }
+  }
+</style>
