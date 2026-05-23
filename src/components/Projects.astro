@@ -1,0 +1,92 @@
+---
+const projects = [
+  {
+    title: "React User List",
+    description:
+      "A user management web application built with React that allows users to view and manage user information through a clean and responsive interface.",
+    technologies: ["React", "JavaScript", "CSS"],
+    link: "https://github.com/Fran2007/react-users-list",
+  },
+  {
+    title: "React Task Application",
+    description:
+      "A modern task management application that allows users to create, edit, delete, and organize tasks with a responsive and user-friendly interface.",
+    technologies: ["React", "JavaScript", "Tailwindcss", "Jest"],
+    link: "https://github.com/Fran2007/react-task-application",
+  },
+  {
+    title: "ListOfBooks",
+    description:
+      "A web-based library application that allows users to browse and filter books by title and page count, as well as create and manage a personalized reading list.",
+    technologies: ["React", "Tailwindcss"],
+    link: "https://github.com/Fran2007/ListOfBooks",
+  },
+  {
+    title: "ManagerLink",
+    description:
+      "A link management web application that allows users to save, edit, and delete links efficiently. Built with a modern frontend stack and focused on responsive design and usability.",
+    technologies: [
+      "React",
+      "Tailwindcss",
+      "MongoDB",
+      "react-router-dom",
+      "TypeScript",
+    ],
+    link: "https://github.com/Fran2007/manager-link",
+  },
+];
+---
+
+<section id="proyectos" class="py-24 px-8 bg-bg-primary">
+  <div class="max-w-7xl mx-auto">
+    <h2
+      class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-12 text-center bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
+    >
+      Projects
+    </h2>
+    <div
+      class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8 max-w-6xl mx-auto"
+    >
+      {
+        projects.map((project) => (
+          <div class="bg-card-bg border border-border rounded-xl p-8 transition-all duration-300 flex flex-col hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]">
+            <div class="mb-4">
+              <h3 class="text-2xl font-semibold text-text-primary mb-2">
+                {project.title}
+              </h3>
+            </div>
+            <p class="text-base leading-relaxed text-text-secondary mb-6 flex-grow">
+              {project.description}
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              {project.technologies.map((tech) => (
+                <span class="bg-accent/10 text-accent px-3.5 py-1.5 rounded-md text-sm border border-accent/20">
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <a
+              href={project.link}
+              class="text-accent font-medium no-underline transition-all duration-300 inline-flex items-center gap-2 hover:text-accent-hover hover:gap-3"
+            >
+              View Project ->
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    #proyectos .grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    #proyectos .bg-card-bg {
+      padding: 1.5rem;
+    }
+  }
+</style>
