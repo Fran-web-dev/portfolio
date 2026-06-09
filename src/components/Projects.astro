@@ -37,7 +37,7 @@ const projects = [
 ];
 ---
 
-<section id="proyectos" class="py-24 px-8 bg-bg-primary">
+<section id="proyectos" class="py-24 px-8 bg-[#171c28]">
   <div class="max-w-7xl mx-auto">
     <h2
       class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-12 text-center bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
@@ -47,15 +47,16 @@ const projects = [
     <div
       class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8 max-w-6xl mx-auto"
     >
+    <!---this is a test--->
       {
         projects.map((project) => (
-          <div class="bg-card-bg border border-border rounded-xl p-8 transition-all duration-300 flex flex-col hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]">
-            <div class="mb-4">
-              <h3 class="text-2xl font-semibold text-text-primary mb-2">
+          <div class="bg-[#1b2233] shadow-xl rounded-xl p-8 transition-all duration-300 hover:border-slate-700 hover:shadow-slate-900 border border-slate-800">
+            <div class="flex items-start justify-between mb-6">
+              <h3 class="text-2xl font-semibold text-text mb-2">
                 {project.title}
               </h3>
             </div>
-            <p class="text-base leading-relaxed text-text-secondary mb-6 flex-grow">
+            <p class="text-base font-Montserrat leading-relaxed text-slate-100 mb-6 flex-grow">
               {project.description}
             </p>
             <div class="flex flex-wrap gap-2 mb-6">
