@@ -1,83 +1,58 @@
 ---
 const experiences = [
   {
-    imagesrc: "../../images/hoppscotch.jpg",
-    title: "Hoppscotch",
-    beginDate: "01/01/2023",
-    description: "Open Source contributor.",
-    contributions: [
-      "Contributed improvements to the codebase.",
-      "Collaborated through pull requests and code reviews.",
-      "Worked with TypeScript and modern frontend technologies.",
-      " Participated in issue discussions and bug fixes.",
-    ],
-  },
-  {
-    imagesrc: "../../images/react.png",
-    title: "React js",
-    beginDate: "01/02/2025",
-    description: "Open Source contributor.",
-    contributions: [
-      "Contributed improvements to the codebase.",
-      "Collaborated through pull requests and code reviews.",
-      "Worked with TypeScript and modern frontend technologies.",
-      "Participated in issue discussions and bug fixes.",
+    title: "Frontend Developer",
+    company: "Personal Projects",
+    period: "2020 - 2026",
+    description:
+      "Development of modern, responsive user interfaces. Implementation of reusable components and optimization of the user experience.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "CSS",
+      "Tailwindcss",
+      "Nextjs",
     ],
   },
 ];
 ---
 
-<section id="experiencia" class="py-24 px-8 bg-[#171c28]">
-  <div class="max-w-6xl mx-auto order-1 lg:order-2">
+<section id="experiencia" class="py-24 px-8 bg-bg-secondary">
+  <div class="max-w-7xl mx-auto">
     <h2
-      class="text-[clamp(1rem,5vw,3.5rem)] font-Montserrat font-medium mb-8 bg-gradient-to-b text-white text-center leading-none"
+      class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-12 text-center bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
     >
-      Open Source Contributions
+      Experience
     </h2>
     <div class="max-w-4xl mx-auto relative pl-8">
-      <div class="absolute left-2 top-0 bottom-0 w-0.5 bg-slate-600"></div>
+      <div class="absolute left-2 top-0 bottom-0 w-0.5 bg-border"></div>
       {
         experiences.map((exp) => (
           <div class="relative mb-12">
-            <div class="absolute -left-[1.75rem] top-2 w-3 h-3 rounded-full border-[3px] border-bg-secondary z-10" />
-            <div class="bg-[#1b2233] shadow-xl rounded-xl p-8 transition-all duration-300 hover:border-slate-700 hover:shadow-slate-900 border border-slate-800">
-              <div class="flex items-start justify-between mb-6">
-                <div class="flex items-center gap-4">
-                  <img
-                    src={exp.imagesrc}
-                    alt={exp.title}
-                    class="h-12 w-12 rounded-lg object-cover"
-                  />
-
-                  <div>
-                    <h3 class="text-xl font-semibold text-white">
-                      {exp.title}
-                    </h3>
-
-                    <p class="text-sm text-slate-400 font-Montserrat">
-                      Open Source Contributor
-                    </p>
-                  </div>
-                </div>
-
-                <span class="text-sm text-slate-500 whitespace-nowrap font-Montserrat">
-                  {exp.beginDate} - Present
+            <div class="absolute -left-[1.75rem] top-2 w-3 h-3 rounded-full bg-accent border-[3px] border-bg-secondary z-10" />
+            <div class="bg-card-bg border border-border rounded-xl p-8 transition-all duration-300 hover:border-accent hover:translate-x-1">
+              <div class="flex justify-between items-start mb-2 flex-wrap gap-4">
+                <h3 class="text-2xl font-semibold text-text-primary">
+                  {exp.title}
+                </h3>
+                <span class="text-sm text-text-secondary whitespace-nowrap">
+                  {exp.period}
                 </span>
               </div>
-
-              <p class="text-slate-300 leading-relaxed mb-6">
+              <p class="text-base text-accent mb-4 font-medium">
+                {exp.company}
+              </p>
+              <p class="text-base leading-relaxed text-text-secondary mb-6">
                 {exp.description}
               </p>
-
-              <ul class="space-y-3">
-                {exp.contributions.map((item) => (
-                  <li class="flex items-start gap-3">
-                    <span class="mt-2 h-2 w-2 rounded-full bg-purple-500 shrink-0" />
-
-                    <span class="text-slate-400 leading-relaxed">{item}</span>
-                  </li>
+              <div class="flex flex-wrap gap-2">
+                {exp.technologies.map((tech) => (
+                  <span class="bg-accent/10 text-accent px-3.5 py-1.5 rounded-md text-sm border border-accent/20">
+                    {tech}
+                  </span>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
         ))

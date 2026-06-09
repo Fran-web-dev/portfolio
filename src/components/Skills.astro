@@ -14,229 +14,87 @@ import {
 import IconWrapper from "./IconWrapper";
 ---
 
-<section id="tecnologias" class="font-Montserrat bg-[#171c28] py-24 px-8">
+<section id="tecnologias" class="py-24 px-8 bg-bg-primary">
   <div class="max-w-7xl mx-auto">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
-      <!-- Imagen -->
-      <div class="order-2 lg:order-1">
-        <img
-          src="../../images/avtar-left-side.b67bdcf5.svg"
-          alt="Skills Illustration"
-          class="w-full max-w-xl mx-auto"
-        />
+    <h2
+      class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-12 text-center bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
+    >
+      Technologies
+    </h2>
+    <div
+      class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-6 max-w-6xl mx-auto"
+    >
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-[#61DAFB]">
+          <IconWrapper Icon={SiReact} />
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">React</h3>
       </div>
-
-      <!-- Contenido -->
-      <div class="order-1 lg:order-2">
-        <h2
-          class="text-[clamp(3rem,5vw,4.8rem)]
-          font-light
-          leading-none
-          text-white
-          mb-4"
-        >
-          What I do
-        </h2>
-
-        <p
-          class="uppercase
-          tracking-wide
-          text-slate-300
-          text-sm
-          md:text-base
-          mb-10"
-        >
-          CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK
-        </p>
-
-        <!-- Tecnologías -->
-        <div
-          class="grid grid-cols-[repeat(auto-fit,minmax(90px,1fr))]
-          gap-x-6
-          gap-y-8
-          mb-12"
-        >
-          <div class="group flex flex-col items-center">
-            <div
-              class="text-5xl text-slate-400
-              transition-all duration-300
-              group-hover:text-[#61DAFB]
-              group-hover:scale-110"
-            >
-              <IconWrapper Icon={SiReact} />
-            </div>
-            <h3
-              class="mt-3 text-xs text-slate-500
-              group-hover:text-slate-300
-              transition-colors"
-            >
-              React
-            </h3>
-          </div>
-
-          <div class="group flex flex-col items-center">
-            <div
-              class="text-5xl text-slate-400
-              transition-all duration-300
-              group-hover:text-[#47A248]
-              group-hover:scale-110"
-            >
-              <IconWrapper Icon={SiMongodb} />
-            </div>
-            <h3
-              class="mt-3 text-xs text-slate-500
-              group-hover:text-slate-300
-              transition-colors"
-            >
-              MongoDB
-            </h3>
-          </div>
-
-          <div class="group flex flex-col items-center">
-            <div
-              class="text-5xl text-slate-400
-              transition-all duration-300
-              group-hover:text-[#FF5D01]
-              group-hover:scale-110"
-            >
-              <IconWrapper Icon={SiAstro} />
-            </div>
-            <h3
-              class="mt-3 text-xs text-slate-500
-              group-hover:text-slate-300
-              transition-colors"
-            >
-              Astro
-            </h3>
-          </div>
-
-          <div class="group flex flex-col items-center">
-            <div
-              class="text-5xl text-slate-400
-              transition-all duration-300
-              group-hover:text-[#3178C6]
-              group-hover:scale-110"
-            >
-              <IconWrapper Icon={SiTypescript} />
-            </div>
-            <h3
-              class="mt-3 text-xs text-slate-500
-              group-hover:text-slate-300
-              transition-colors"
-            >
-              TypeScript
-            </h3>
-          </div>
-
-          <div class="group flex flex-col items-center">
-            <div
-              class="text-5xl text-slate-400
-              transition-all duration-300
-              group-hover:text-[#339933]
-              group-hover:scale-110"
-            >
-              <IconWrapper Icon={SiNodedotjs} />
-            </div>
-            <h3
-              class="mt-3 text-xs text-slate-500
-              group-hover:text-slate-300
-              transition-colors"
-            >
-              Node.js
-            </h3>
-          </div>
-
-          <div class="group flex flex-col items-center">
-            <div
-              class="text-5xl text-slate-400
-              transition-all duration-300
-              group-hover:text-white
-              group-hover:scale-110"
-            >
-              <IconWrapper Icon={SiNextdotjs} />
-            </div>
-            <h3
-              class="mt-3 text-xs text-slate-500
-              group-hover:text-slate-300
-              transition-colors"
-            >
-              Next.js
-            </h3>
-          </div>
-
-          <div class="group flex flex-col items-center">
-            <div
-              class="text-5xl text-slate-400
-              transition-all duration-300
-              group-hover:text-[#1572B6]
-              group-hover:scale-110"
-            >
-              <IconWrapper Icon={SiCss} />
-            </div>
-            <h3
-              class="mt-3 text-xs text-slate-500
-              group-hover:text-slate-300
-              transition-colors"
-            >
-              CSS/SCSS
-            </h3>
-          </div>
-
-          <div class="group flex flex-col items-center">
-            <div
-              class="text-5xl text-slate-400
-              transition-all duration-300
-              group-hover:text-[#F05032]
-              group-hover:scale-110"
-            >
-              <IconWrapper Icon={SiGit} />
-            </div>
-            <h3
-              class="mt-3 text-xs text-slate-500
-              group-hover:text-slate-300
-              transition-colors"
-            >
-              Git
-            </h3>
-          </div>
-
-          <div class="group flex flex-col items-center">
-            <div
-              class="text-5xl text-slate-400
-              transition-all duration-300
-              group-hover:text-white
-              group-hover:scale-110"
-            >
-              <IconWrapper Icon={SiExpress} />
-            </div>
-            <h3
-              class="mt-3 text-xs text-slate-500
-              group-hover:text-slate-300
-              transition-colors"
-            >
-              Express
-            </h3>
-          </div>
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-[#47A248]">
+          <IconWrapper Icon={SiMongodb} />
         </div>
-
-        <!-- Lista -->
-        <div class="space-y-5">
-          <p class="text-lg text-white flex gap-3">
-            <span class="text-yellow-400">⚡</span>
-            Develop highly interactive Front End / User Interfaces for web and mobile
-            applications
-          </p>
-
-          <p class="text-lg text-white flex gap-3">
-            <span class="text-yellow-400">⚡</span>
-            Progressive Web Applications (PWA) in normal and SPA stacks
-          </p>
-
-          <p class="text-lg text-white flex gap-3">
-            <span class="text-yellow-400">⚡</span>
-            Integration of third-party services such as Firebase, AWS and DigitalOcean
-          </p>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">MongoDB</h3>
+      </div>
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-[#FF5D01]">
+          <IconWrapper Icon={SiAstro} />
         </div>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">Astro</h3>
+      </div>
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-[#3178C6]">
+          <IconWrapper Icon={SiTypescript} />
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">TypeScript</h3>
+      </div>
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-[#339933]">
+          <IconWrapper Icon={SiNodedotjs} />
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">Node.js</h3>
+      </div>
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-white">
+          <IconWrapper Icon={SiNextdotjs} />
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">Next.js</h3>
+      </div>
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-[#1572B6]">
+          <IconWrapper Icon={SiCss} />
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">CSS/SCSS</h3>
+      </div>
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-[#F05032]">
+          <IconWrapper Icon={SiGit} />
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">Git</h3>
+      </div>
+      <div
+        class="bg-card-bg border border-border rounded-xl p-8 text-center transition-all duration-300 cursor-pointer hover:border-accent hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,112,243,0.2)]"
+      >
+        <div class="text-5xl mb-4 flex justify-center text-white">
+          <IconWrapper Icon={SiExpress} />
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-text-primary">Express</h3>
       </div>
     </div>
   </div>
@@ -244,13 +102,13 @@ import IconWrapper from "./IconWrapper";
 
 <style>
   @media (max-width: 768px) {
-    #tecnologias {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+    #tecnologias .grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
     }
 
-    #tecnologias .grid {
-      gap: 1.5rem;
+    #tecnologias .bg-card-bg {
+      padding: 1.5rem;
     }
   }
 </style>
