@@ -1,24 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
       colors: {
-        background: "#0f172a",
-        primary: "#000000",
-        secondary: "#0a0a0a",
-        text: "#ffffff",
-        textMuted: "#a1a1aa",
-        accent: "#0070f3",
-        "accent-hover": "#0051cc",
-        border: "#1f1f1f",
-        "card-bg": "#111111",
+        'bg-primary': '#000000',
+        'bg-secondary': '#0a0a0a',
+        'text-primary': '#ffffff',
+        'text-secondary': '#a1a1aa',
+        'accent': '#0070f3',
+        'accent-hover': '#0051cc',
+        'border': '#1f1f1f',
+        'card-bg': '#111111',
       },
       fontFamily: {
-        sans: ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
-        Montserrat: ["Montserrat", "sans-serif"],
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
       },
     },
   },
   plugins: [],
-};
+}
+
