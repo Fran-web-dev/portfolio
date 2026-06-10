@@ -1,4 +1,6 @@
 ---
+import Navbar from "../components/Navbar.astro";
+
 interface Props {
   title?: string;
   description?: string;
@@ -31,6 +33,7 @@ const {
   <body
     class="font-sans bg-background text-text leading-relaxed overflow-x-hidden"
   >
+    <Navbar />
     <slot />
   </body>
 </html>
@@ -42,15 +45,12 @@ const {
     box-sizing: border-box;
   }
 
+  body {
+    font-family: "Montserrat", sans-serif;
+  }
+
   ::selection {
     background: theme("colors.accent");
     /* color: theme("colors.text"); */
-  }
-
-  .montserrat-<uniquifier > {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
   }
 </style>

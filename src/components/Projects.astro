@@ -37,10 +37,10 @@ const projects = [
 ];
 ---
 
-<section id="proyectos" class="py-24 px-8 bg-[#171c28]">
+<section id="achievements" class="scroll-mt-24 py-24 px-8 bg-[#171c28]">
   <div class="max-w-7xl mx-auto">
     <h2
-      class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-12 text-center bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
+      class="text-[clamp(1rem,5vw,3.5rem)] font-Montserrat font-medium mb-8 bg-gradient-to-b text-white text-center leading-none"
     >
       Projects
     </h2>
@@ -60,7 +60,7 @@ const projects = [
             </p>
             <div class="flex flex-wrap gap-2 mb-6">
               {project.technologies.map((tech) => (
-                <span class="bg-accent/10 text-accent px-3.5 py-1.5 rounded-md text-sm border border-accent/20">
+                <span class="bg-accent/10 bg-[#1b2234] hover:bg-[#1b2244] px-3.5 py-1.5 rounded-md text-sm border border-accent/20">
                   {tech}
                 </span>
               ))}

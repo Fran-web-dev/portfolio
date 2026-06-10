@@ -15,7 +15,7 @@ export default {
         "card-bg": "#111111",
       },
       fontFamily: {
-        sans: ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        sans: ["Montserrat", "sans-serif"],
         Montserrat: ["Montserrat", "sans-serif"],
       },
     },
