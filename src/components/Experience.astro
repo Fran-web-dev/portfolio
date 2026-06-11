@@ -27,22 +27,22 @@ const experiences = [
 ];
 ---
 
-<section id="experiencia" class="scroll-mt-24 py-24 px-8 bg-[#171c28]">
+<section id="experiencia" class="scroll-mt-24 bg-[#171c28] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
   <div class="max-w-6xl mx-auto order-1 lg:order-2">
     <h2
-      class="text-[clamp(1rem,5vw,3.5rem)] font-Montserrat font-medium mb-8 bg-gradient-to-b text-white text-center leading-none"
+      class="mb-8 text-[clamp(2rem,8vw,3.5rem)] font-Montserrat font-medium leading-none text-white text-center"
     >
       Open Source Contributions
     </h2>
-    <div class="max-w-4xl mx-auto relative pl-8">
-      <div class="absolute left-2 top-0 bottom-0 w-0.5 bg-slate-600"></div>
+    <div class="relative mx-auto max-w-4xl pl-4 sm:pl-8">
+      <div class="absolute bottom-0 top-0 left-0 w-0.5 bg-slate-600 sm:left-2"></div>
       {
         experiences.map((exp) => (
-          <div class="relative mb-12">
-            <div class="absolute -left-[1.75rem] top-2 w-3 h-3 rounded-full border-[3px] border-bg-secondary z-10" />
-            <div class="bg-[#1b2233] shadow-xl rounded-xl p-8 transition-all duration-300 hover:border-slate-700 hover:shadow-slate-900 border border-slate-800">
-              <div class="flex items-start justify-between mb-6">
-                <div class="flex items-center gap-4">
+          <div class="relative mb-10 sm:mb-12">
+            <div class="absolute -left-[0.7rem] top-2 z-10 h-3 w-3 rounded-full border-[3px] border-bg-secondary sm:-left-[1.75rem]" />
+            <div class="rounded-xl border border-slate-800 bg-[#1b2233] p-5 shadow-xl transition-all duration-300 hover:border-slate-700 hover:shadow-slate-900 sm:p-8">
+              <div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div class="flex items-start gap-4">
                   <img
                     src={exp.imagesrc}
                     alt={exp.title}
@@ -60,12 +60,12 @@ const experiences = [
                   </div>
                 </div>
 
-                <span class="text-sm text-slate-500 whitespace-nowrap font-Montserrat">
+                <span class="text-sm whitespace-nowrap text-slate-500 font-Montserrat">
                   {exp.beginDate} - Present
                 </span>
               </div>
 
-              <p class="text-slate-300 leading-relaxed mb-6">
+              <p class="mb-6 text-sm leading-relaxed text-slate-300 sm:text-base">
                 {exp.description}
               </p>
 
@@ -74,7 +74,9 @@ const experiences = [
                   <li class="flex items-start gap-3">
                     <span class="mt-2 h-2 w-2 rounded-full bg-purple-500 shrink-0" />
 
-                    <span class="text-slate-400 leading-relaxed">{item}</span>
+                    <span class="text-sm leading-relaxed text-slate-400 sm:text-base">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -85,23 +87,3 @@ const experiences = [
     </div>
   </div>
 </section>
-
-<style>
-  @media (max-width: 768px) {
-    #experiencia .max-w-4xl {
-      padding-left: 1.5rem;
-    }
-
-    #experiencia .absolute.-left-\[1\.75rem\] {
-      left: -1.25rem;
-    }
-
-    #experiencia .bg-card-bg {
-      padding: 1.5rem;
-    }
-
-    #experiencia .flex.justify-between {
-      flex-direction: column;
-    }
-  }
-</style>

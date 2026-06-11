@@ -32,7 +32,7 @@ const {
     />
   </head>
   <body
-    class="font-sans bg-background text-text leading-relaxed overflow-x-hidden"
+    class="font-sans bg-background text-text leading-relaxed overflow-x-hidden antialiased"
   >
     <Navbar />
     <slot />
@@ -48,6 +48,15 @@ const {
 
   body {
     font-family: "Montserrat", sans-serif;
+    min-width: 320px;
+  }
+
+  img,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
+    height: auto;
   }
 
   ::selection {

@@ -2,10 +2,10 @@
 import TextType from "./TextType";
 ---
 
-<section id="sobre-mi" class="py-24 px-8 bg-[#171c28]">
+<section id="sobre-mi" class="bg-[#171c28] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
   <div class="max-w-7xl mx-auto">
-    <div class="grid gap-12 md:grid-cols-[1.1fr,0.9fr] items-center">
-      <div>
+    <div class="grid items-center gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:gap-12">
+      <div class="order-2 lg:order-1">
         <TextType
           client:load
           text={["I'm "]}
@@ -15,7 +15,7 @@ import TextType from "./TextType";
           showCursor={false}
           deletingSpeed={62}
           cursorBlinkDuration={1.15}
-          className="text-[clamp(1rem,5vw,3.5rem)] font-semibold font-Montserrat"
+          className="text-[clamp(2.2rem,8vw,3.5rem)] font-semibold font-Montserrat"
         />
         <TextType
           client:load
@@ -25,10 +25,10 @@ import TextType from "./TextType";
           pauseDuration={3300}
           deletingSpeed={62}
           cursorBlinkDuration={1.15}
-          className="text-[clamp(1rem,5vw,3.5rem)] font-semibold font-Montserrat mb-8 bg-gradient-to-b from-[#FFFFFF] via-[#D8B4FE] to-[#55198B] bg-clip-text text-transparent"
+          className="mb-6 text-[clamp(2.2rem,8vw,3.5rem)] font-semibold font-Montserrat bg-gradient-to-b from-[#FFFFFF] via-[#D8B4FE] to-[#55198B] bg-clip-text text-transparent sm:mb-8"
         />
         <div
-          class="text-2xl font-Montserrat font-normal leading-relaxed text space-y-6"
+          class="space-y-5 text-base font-Montserrat font-normal leading-relaxed text-slate-200 sm:text-lg lg:text-2xl"
         >
           <p>
             Building fast, accessible and modern web applications with React,
@@ -40,62 +40,60 @@ import TextType from "./TextType";
             Focused on performance, clean UI design and exceptional user
             experiences.
           </p>
-          <div class="flex items-center gap-4 my-4">
-            <div class="flex items-center gap-4 my-6">
-              <a
-                href="https://github.com/Fran-web-dev"
-                class="w-12 h-12 rounded-full bg-[#333333] flex items-center justify-center hover:scale-110 transition-transform"
-              >
-                <img src="/images/github.png" class="w-5 h-5 object-contain" />
-              </a>
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href="https://github.com/Fran-web-dev"
+              class="flex h-12 w-12 items-center justify-center rounded-full bg-[#333333] transition-transform hover:scale-110"
+            >
+              <img src="/images/github.png" class="h-5 w-5 object-contain" />
+            </a>
 
-              <a
-                href="mailto:franklinevillanueva4@gmail.com"
-                class="w-12 h-12 rounded-full bg-[#EA4335] flex items-center justify-center hover:scale-110 transition-transform"
-              >
-                <img
-                  src="/images/gmail.png"
-                  alt="Gmail"
-                  class="w-5 h-5 object-contain"
-                />
-              </a>
-            </div>
+            <a
+              href="mailto:franklinevillanueva4@gmail.com"
+              class="flex h-12 w-12 items-center justify-center rounded-full bg-[#EA4335] transition-transform hover:scale-110"
+            >
+              <img
+                src="/images/gmail.png"
+                alt="Gmail"
+                class="h-5 w-5 object-contain"
+              />
+            </a>
           </div>
-          <div class="flex flex-wrap gap-6">
+          <div class="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
             <a
               href="#contacto"
-              class="px-9 py-3 rounded-lg bg-[rgb(85,25,139)] text-white font-semibold text-base border border-transparent transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-white hover:text-[rgb(85,25,139)] hover:border-[rgb(85,25,139)] hover:shadow-xl"
+              class="inline-flex w-full items-center justify-center rounded-lg border border-transparent bg-[rgb(85,25,139)] px-7 py-3 text-sm font-semibold text-white transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-white hover:text-[rgb(85,25,139)] hover:border-[rgb(85,25,139)] hover:shadow-xl sm:w-auto sm:px-9 sm:text-base"
             >
               CONTACT ME
             </a>
             <a
               href="/downloads/Franklin_Villanueva_Resume.pdf"
               download="Franklin_Villanueva_CV.pdf"
-              class="px-9 py-3 rounded-lg bg-[rgb(85,25,139)] text-white font-semibold text-base border border-transparent transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-white hover:text-[rgb(85,25,139)] hover:border-[rgb(85,25,139)] hover:shadow-xl"
+              class="inline-flex w-full items-center justify-center rounded-lg border border-transparent bg-[rgb(85,25,139)] px-7 py-3 text-sm font-semibold text-white transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-white hover:text-[rgb(85,25,139)] hover:border-[rgb(85,25,139)] hover:shadow-xl sm:w-auto sm:px-9 sm:text-base"
             >
               DOWNLOAD MY RESUME
             </a>
           </div>
         </div>
       </div>
-      <div class="relative">
+      <div class="relative order-1 lg:order-2">
         <div class="absolute inset-0 blur-[120px] opacity-20"></div>
         <div
-          class="relative rounded-[32px] overflow-hidden border border-white/10 shadow-[0_40px_120px_rgba(0,0,0,0.45)]"
+          class="relative mx-auto max-w-xl overflow-hidden rounded-[24px] border border-white/10 shadow-[0_40px_120px_rgba(0,0,0,0.45)] sm:rounded-[32px]"
         >
           <img
             src="/images/profile.png"
             alt="Franklin working in a futuristic digital environment"
-            class="w-full h-full object-cover"
+            class="aspect-[4/5] w-full object-cover sm:aspect-[4/4.5] lg:aspect-[4/5]"
             loading="lazy"
           />
           <div
-            class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/40 to-transparent"
+            class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 via-black/40 to-transparent sm:p-6"
           >
-            <p class="text-sm uppercase tracking-[0.5em] text-white/60 mb-2">
+            <p class="mb-2 text-[0.65rem] uppercase tracking-[0.35em] text-white/60 sm:text-sm sm:tracking-[0.5em]">
               Presence
             </p>
-            <p class="text-2xl font-semibold text-white">
+            <p class="text-lg font-semibold text-white sm:text-2xl">
               LatAm | Global Remote
             </p>
           </div>
