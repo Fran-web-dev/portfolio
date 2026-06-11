@@ -1,16 +1,32 @@
 ---
-
+import TextType from "./TextType";
 ---
 
 <section id="sobre-mi" class="py-24 px-8 bg-[#171c28]">
   <div class="max-w-7xl mx-auto">
     <div class="grid gap-12 md:grid-cols-[1.1fr,0.9fr] items-center">
       <div>
-        <h2
-          class="text-[clamp(1rem,5vw,3.5rem)] font-semibold font-Montserrat mb-8 bg-gradient-to-b text-white"
-        >
-          Hi, I'm Franklin
-        </h2>
+        <TextType
+          client:load
+          text={["I'm "]}
+          loop={false}
+          typingSpeed={145}
+          pauseDuration={1000}
+          showCursor={false}
+          deletingSpeed={62}
+          cursorBlinkDuration={1.15}
+          className="text-[clamp(1rem,5vw,3.5rem)] font-semibold font-Montserrat"
+        />
+        <TextType
+          client:load
+          text={["Franklin"]}
+          loop={true}
+          typingSpeed={145}
+          pauseDuration={3300}
+          deletingSpeed={62}
+          cursorBlinkDuration={1.15}
+          className="text-[clamp(1rem,5vw,3.5rem)] font-semibold font-Montserrat mb-8 bg-gradient-to-b from-[#FFFFFF] via-[#D8B4FE] to-[#55198B] bg-clip-text text-transparent"
+        />
         <div
           class="text-2xl font-Montserrat font-normal leading-relaxed text space-y-6"
         >
@@ -30,10 +46,7 @@
                 href="https://github.com/Fran-web-dev"
                 class="w-12 h-12 rounded-full bg-[#333333] flex items-center justify-center hover:scale-110 transition-transform"
               >
-                <img
-                  src="/images/github.png"
-                  class="w-5 h-5 object-contain"
-                />
+                <img src="/images/github.png" class="w-5 h-5 object-contain" />
               </a>
 
               <a
@@ -82,7 +95,9 @@
             <p class="text-sm uppercase tracking-[0.5em] text-white/60 mb-2">
               Presence
             </p>
-            <p class="text-2xl font-semibold text-white">LatAm | Global Remote</p>
+            <p class="text-2xl font-semibold text-white">
+              LatAm | Global Remote
+            </p>
           </div>
         </div>
       </div>
