@@ -1,0 +1,70 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const stack = ["React", "TypeScript", "Node.js", "WebSockets", "PostgreSQL"];
+const features = [
+  "Live service health board with latency, throughput and error budget indicators.",
+  "Incident timeline that groups deploys, alerts and owner notes into one operational view.",
+  "Region-aware filtering for comparing API performance across distributed environments.",
+  "WebSocket event stream designed around reconnects, backpressure and loading states.",
+];
+---
+
+<Layout
+  title="EdgeMetrics Command Center - Franklin Villanueva"
+  description="Real-time observability dashboard project by Franklin Villanueva."
+>
+  <main class="bg-[#0b1019] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <section class="mx-auto max-w-5xl">
+      <a href="/#proyectos" class="text-sm font-semibold text-[#7dd3fc] hover:text-white">
+        Back to projects
+      </a>
+      <p class="section-eyebrow mt-10">Real-time observability</p>
+      <h1 class="section-title mt-4">EdgeMetrics Command Center</h1>
+      <p class="section-copy mt-6">
+        A production-style analytics workspace for monitoring API latency,
+        error budgets and deployment health across regions.
+      </p>
+
+      <div class="mt-10 grid gap-5 sm:grid-cols-3">
+        <div class="metric-card">
+          <p class="text-sm text-slate-400">Primary signal</p>
+          <p class="mt-3 text-2xl font-semibold text-white">Reliability UX</p>
+        </div>
+        <div class="metric-card">
+          <p class="text-sm text-slate-400">Core pattern</p>
+          <p class="mt-3 text-2xl font-semibold text-white">Live data flow</p>
+        </div>
+        <div class="metric-card">
+          <p class="text-sm text-slate-400">Recruiter value</p>
+          <p class="mt-3 text-2xl font-semibold text-white">Systems thinking</p>
+        </div>
+      </div>
+
+      <div class="mt-12 grid gap-8 lg:grid-cols-[0.9fr,1.1fr]">
+        <div class="glass-panel rounded-lg p-6">
+          <h2 class="text-2xl font-semibold text-white">Tech Stack</h2>
+          <div class="mt-5 flex flex-wrap gap-2">
+            {stack.map((item) => (
+              <span class="rounded-md border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-300">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div class="glass-panel rounded-lg p-6">
+          <h2 class="text-2xl font-semibold text-white">What it demonstrates</h2>
+          <ul class="mt-5 space-y-4">
+            {features.map((feature) => (
+              <li class="flex gap-3 text-sm leading-7 text-slate-300">
+                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#7dd3fc]" />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

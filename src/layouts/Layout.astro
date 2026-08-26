@@ -21,6 +21,7 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#0b1019" />
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,11 +32,114 @@ const {
       rel="stylesheet"
     />
   </head>
-  <body
-    class="font-sans bg-background text-text leading-relaxed overflow-x-hidden antialiased"
-  >
+  <body class="font-sans text-text leading-relaxed overflow-x-hidden antialiased">
     <Navbar />
     <slot />
+    <button
+      id="sound-toggle"
+      type="button"
+      aria-pressed="false"
+      aria-label="Enable interface sounds"
+      class="fixed bottom-5 left-5 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-[#101521]/90 text-white shadow-2xl backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-[#7dd3fc]/60"
+    >
+      <span aria-hidden="true">♪</span>
+    </button>
+    <script is:inline>
+      (() => {
+        const toggle = document.getElementById("sound-toggle");
+        let enabled = false;
+        let audioContext;
+
+        const getContext = () => {
+          audioContext ||= new (window.AudioContext || window.webkitAudioContext)();
+          return audioContext;
+        };
+
+        const playTone = (
+          frequency = 520,
+          duration = 0.095,
+          volume = 0.01,
+          type = "sine",
+          delay = 0,
+        ) => {
+          if (!enabled) return;
+          const context = getContext();
+          const oscillator = context.createOscillator();
+          const gain = context.createGain();
+          const filter = context.createBiquadFilter();
+          const start = context.currentTime + delay;
+
+          oscillator.type = type;
+          oscillator.frequency.setValueAtTime(frequency, start);
+          oscillator.frequency.linearRampToValueAtTime(frequency * 0.96, start + duration);
+          filter.type = "lowpass";
+          filter.frequency.setValueAtTime(1800, start);
+          filter.Q.setValueAtTime(0.45, start);
+          gain.gain.setValueAtTime(0, start);
+          gain.gain.linearRampToValueAtTime(volume, start + 0.028);
+          gain.gain.exponentialRampToValueAtTime(0.001, start + duration);
+          oscillator.connect(filter);
+          filter.connect(gain);
+          gain.connect(context.destination);
+          oscillator.start(start);
+          oscillator.stop(start + duration + 0.02);
+        };
+
+        const playButtonSound = () => {
+          playTone(620, 0.08, 0.01, "sine");
+          playTone(930, 0.095, 0.006, "sine", 0.035);
+        };
+
+        const playScrollSound = (direction) => {
+          const base = direction > 0 ? 300 : 280;
+          playTone(base, 0.11, 0.0045, "sine");
+          playTone(base * 1.65, 0.095, 0.0035, "sine", 0.045);
+        };
+
+        toggle?.addEventListener("click", async () => {
+          enabled = !enabled;
+          toggle.setAttribute("aria-pressed", String(enabled));
+          toggle.setAttribute(
+            "aria-label",
+            enabled ? "Disable interface sounds" : "Enable interface sounds",
+          );
+          toggle.classList.toggle("border-[#7dd3fc]/70", enabled);
+          toggle.classList.toggle("text-[#7dd3fc]", enabled);
+          if (enabled) {
+            await getContext().resume();
+            playTone(460, 0.11, 0.01, "sine");
+            playTone(690, 0.13, 0.006, "sine", 0.08);
+          }
+        });
+
+        document.addEventListener("pointerdown", (event) => {
+          if (event.target.closest("a, button, input, textarea")) {
+            playButtonSound();
+          }
+        });
+
+        let lastScrollY = window.scrollY;
+        let lastScrollSoundAt = 0;
+
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (!enabled) return;
+            const currentScrollY = window.scrollY;
+            const delta = currentScrollY - lastScrollY;
+            const now = performance.now();
+
+            if (Math.abs(delta) > 36 && now - lastScrollSoundAt > 320) {
+              playScrollSound(delta);
+              lastScrollSoundAt = now;
+            }
+
+            lastScrollY = currentScrollY;
+          },
+          { passive: true },
+        );
+      })();
+    </script>
   </body>
 </html>
 

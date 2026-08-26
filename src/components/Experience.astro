@@ -4,24 +4,24 @@ const experiences = [
     imagesrc: "/images/hoppscotch.jpg",
     title: "Hoppscotch",
     beginDate: "01/01/2023",
-    description: "Open Source contributions.",
+    description:
+      "Open-source collaboration focused on code quality, issue discussion and maintainable frontend changes.",
     contributions: [
-      "Contributed improvements to the codebase.",
-      "Collaborated through pull requests and code reviews.",
-      "Worked with TypeScript and modern frontend technologies.",
-      " Participated in issue discussions and bug fixes.",
+      "Shaped improvements through pull requests, review feedback and issue discussion.",
+      "Worked with TypeScript, modern frontend structure and community code standards.",
+      "Practiced production collaboration: small changes, clear communication and careful testing.",
     ],
   },
   {
     imagesrc: "/images/react.png",
     title: "React js",
     beginDate: "01/02/2025",
-    description: "Open Source contributions.",
+    description:
+      "Applied React fundamentals through practical UI work, reusable components and testing-oriented thinking.",
     contributions: [
-      "Contributed improvements to the codebase.",
-      "Collaborated through pull requests and code reviews.",
-      "Worked with TypeScript and modern frontend technologies.",
-      "Participated in issue discussions and bug fixes.",
+      "Built reusable UI flows with attention to state, rendering and responsive behavior.",
+      "Improved project structure while keeping components readable and maintainable.",
+      "Used testing habits and code review practices to reduce regression risk.",
     ],
   },
 ];
@@ -29,22 +29,26 @@ const experiences = [
 
 <section
   id="experiencia"
-  class="scroll-mt-24 bg-[#171c28] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+  class="scroll-mt-24 bg-[#111827] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
 >
   <div class="max-w-6xl mx-auto order-1 lg:order-2">
-    <h2
-      class="mb-8 text-[clamp(2rem,8vw,3.5rem)] font-Montserrat font-medium leading-none text-white text-center"
-    >
-      Open Source Contributions
-    </h2>
+    <div class="mb-12 text-center">
+      <p class="section-eyebrow">Experience</p>
+      <h2 class="section-title mx-auto mt-3">Collaboration habits that scale.</h2>
+      <p class="section-copy mx-auto mt-5">
+        My experience is centered on practical product engineering: clear
+        communication, maintainable frontend decisions and improving software in
+        public.
+      </p>
+    </div>
     <div class="relative mx-auto max-w-4xl pl-4 sm:pl-8">
-      <div class="absolute bottom-0 top-0 left-0 w-0.5 bg-slate-600 sm:left-2">
+      <div class="absolute bottom-0 top-0 left-0 w-0.5 bg-white/10 sm:left-2">
       </div>
       {
         experiences.map((exp) => (
           <div class="relative mb-10 sm:mb-12">
             <div class="absolute -left-[0.7rem] top-2 z-10 h-3 w-3 rounded-full border-[3px] border-bg-secondary sm:-left-[1.75rem]" />
-            <div class="rounded-xl border border-slate-800 bg-[#1b2233] p-5 shadow-xl transition-all duration-300 hover:border-slate-700 hover:shadow-slate-900 sm:p-8">
+            <div class="project-card sm:p-8">
               <div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div class="flex items-start gap-4">
                   <img
@@ -59,7 +63,7 @@ const experiences = [
                     </h3>
 
                     <p class="text-sm text-slate-400 font-Montserrat">
-                      Open Source Contributions
+                      Open Source / Frontend Practice
                     </p>
                   </div>
                 </div>
@@ -76,7 +80,7 @@ const experiences = [
               <ul class="space-y-3">
                 {exp.contributions.map((item) => (
                   <li class="flex items-start gap-3">
-                    <span class="mt-2 h-2 w-2 rounded-full bg-purple-500 shrink-0" />
+                    <span class="mt-2 h-2 w-2 rounded-full bg-[#7dd3fc] shrink-0" />
 
                     <span class="text-sm leading-relaxed text-slate-400 sm:text-base">
                       {item}

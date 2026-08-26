@@ -1,77 +1,107 @@
 ---
 const projects = [
   {
-    title: "React User List",
+    title: "EdgeMetrics Command Center",
+    subtitle: "Real-time observability dashboard",
     description:
-      "A user management web application built with React that allows users to view and manage user information through a clean and responsive interface.",
-    technologies: ["React", "JavaScript", "CSS"],
-    link: "https://github.com/Fran2007/react-users-list",
+      "A production-style analytics workspace for monitoring API latency, error budgets and deployment health across regions.",
+    impact: "Recruiter signal: systems thinking, data UX, reliability metrics",
+    stack: ["React", "TypeScript", "Node.js", "WebSockets", "PostgreSQL"],
+    metrics: ["P95 latency views", "SLO burn alerts", "Live incident timeline"],
+    href: "/projects/edge-metrics-command-center/",
   },
   {
-    title: "React Task Application",
+    title: "TalentFlow ATS",
+    subtitle: "Applicant tracking system",
     description:
-      "A modern task management application that allows users to create, edit, delete, and organize tasks with a responsive and user-friendly interface.",
-    technologies: ["React", "JavaScript", "Tailwindcss", "Jest"],
-    link: "https://github.com/Fran2007/react-task-application",
+      "A hiring workflow platform for managing candidates, job openings and recruiter pipelines with a clean operational interface.",
+    impact: "Recruiter signal: product UX, authenticated flows, business workflow design",
+    stack: ["React", "TypeScript", "Tailwind CSS", "Netlify", "Authentication"],
+    metrics: ["Candidate pipeline", "Job tracking", "Recruiter dashboard"],
+    href: "https://talentflowatss.netlify.app/login",
+    cta: "View live project",
+    external: true,
   },
   {
-    title: "ListOfBooks",
+    title: "PulseCart Infrastructure Lab",
+    subtitle: "Scalable commerce backend",
     description:
-      "A web-based library application that allows users to browse and filter books by title and page count, as well as create and manage a personalized reading list.",
-    technologies: ["React", "Tailwindcss"],
-    link: "https://github.com/Fran2007/ListOfBooks",
-  },
-  {
-    title: "ManagerLink",
-    description:
-      "A link management web application that allows users to save, edit, and delete links efficiently. Built with a modern frontend stack and focused on responsive design and usability.",
-    technologies: [
-      "React",
-      "Tailwindcss",
-      "MongoDB",
-      "react-router-dom",
-      "TypeScript",
-    ],
-    link: "https://github.com/Fran2007/manager-link",
+      "A backend architecture case study for checkout, inventory and payments with queues, caching and graceful failure handling.",
+    impact: "Recruiter signal: backend fundamentals, distributed flows, API design",
+    stack: ["Node.js", "Express", "MongoDB", "Queues", "Docker"],
+    metrics: ["Idempotent checkout", "Inventory locks", "Retry-safe webhooks"],
+    href: "/projects/pulsecart-infrastructure-lab/",
   },
 ];
 ---
 
-<section id="projects" class="scroll-mt-24 bg-[#171c28] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-  <div class="max-w-7xl mx-auto">
-    <h2
-      class="mb-8 text-[clamp(2rem,8vw,3.5rem)] font-Montserrat font-medium leading-none text-white text-center"
-    >
-      Projects
-    </h2>
-    <div
-      class="mx-auto grid max-w-6xl grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-6 sm:gap-8"
-    >
+<section
+  id="proyectos"
+  class="scroll-mt-24 bg-[#0b1019] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+>
+  <div class="mx-auto max-w-7xl">
+    <div class="mb-12 max-w-3xl">
+      <p class="section-eyebrow">Selected Projects</p>
+      <h2 class="section-title mt-3">Projects shaped for serious engineering teams.</h2>
+      <p class="section-copy mt-6">
+        Each project is designed to show the habits large product teams care
+        about: measurable impact, clear architecture, reliable APIs and polished
+        user experience.
+      </p>
+    </div>
+
+    <div class="grid gap-5 lg:grid-cols-3">
       {
         projects.map((project) => (
-          <div class="rounded-xl border border-slate-800 bg-[#1b2233] p-6 shadow-xl transition-all duration-300 hover:border-slate-700 hover:shadow-slate-900 sm:p-8">
-            <div class="mb-6 flex items-start justify-between gap-4">
-              <h3 class="mb-2 text-xl font-semibold text-text sm:text-2xl">
+          <article class="project-card flex min-h-[34rem] flex-col p-6 sm:p-7">
+            <div class="mb-6">
+              <p class="text-sm font-semibold text-[#9ae6b4]">{project.subtitle}</p>
+              <h3 class="mt-3 text-2xl font-semibold leading-tight text-white">
                 {project.title}
               </h3>
+              <p class="mt-4 text-sm leading-7 text-slate-300">
+                {project.description}
+              </p>
             </div>
-            <p class="mb-6 text-sm font-Montserrat leading-relaxed text-slate-100 sm:text-base">
-              {project.description}
-            </p>
-            <div class="mb-6 flex flex-wrap gap-2">
-              {project.technologies.map((tech) => (
-                <span class="rounded-md border border-accent/20 bg-[#1b2234] px-3 py-1.5 text-xs hover:bg-[#1b2244] sm:text-sm">
-                  {tech}
+
+            <div class="rounded-lg border border-white/10 bg-[#111827]/80 p-4">
+              <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[#7dd3fc]">
+                Focus
+              </p>
+              <p class="mt-3 text-sm leading-6 text-slate-300">{project.impact}</p>
+            </div>
+
+            <div class="mt-6">
+              <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                Architecture Signals
+              </p>
+              <ul class="mt-4 space-y-3">
+                {project.metrics.map((metric) => (
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#7dd3fc]" />
+                    <span>{metric}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              {project.stack.map((item) => (
+                <span class="rounded-md border border-white/10 bg-white/[0.04] px-3 py-2 text-xs text-slate-300">
+                  {item}
                 </span>
               ))}
             </div>
+
             <a
-              href={project.link}
-              class="inline-flex items-center gap-2 font-medium text-accent no-underline transition-all duration-300 hover:gap-3 hover:text-accent-hover"
+              href={project.href}
+              target={project.external ? "_blank" : undefined}
+              rel={project.external ? "noopener noreferrer" : undefined}
+              class="professional-button professional-button--ghost mt-auto"
             >
-              View Project ->
+              {project.cta ?? "View project brief"}
             </a>
-          </div>
+          </article>
         ))
       }
     </div>

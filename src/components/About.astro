@@ -1,109 +1,83 @@
 ---
-import TextType from "./TextType";
+const strengths = [
+  "Product-minded UI engineering",
+  "Accessible React architecture",
+  "Performance-focused Astro builds",
+  "API integration and data workflows",
+];
 ---
 
 <section
-  id="sobre-mi"
-  class="bg-[#171c28] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+  id="inicio"
+  class="relative overflow-hidden px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
 >
-  <div class="max-w-7xl mx-auto">
-    <div class="grid items-center gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:gap-12">
-      <div class="order-2 lg:order-1">
-        <TextType
-          client:load
-          text={["Frontend "]}
-          loop={false}
-          typingSpeed={145}
-          pauseDuration={1000}
-          showCursor={false}
-          deletingSpeed={62}
-          cursorBlinkDuration={1.15}
-          className="text-[clamp(2.2rem,8vw,3.5rem)] font-semibold font-Montserrat"
-        />
-        <TextType
-          client:load
-          text={["Developer"]}
-          loop={true}
-          typingSpeed={145}
-          pauseDuration={3300}
-          deletingSpeed={62}
-          cursorBlinkDuration={1.15}
-          className="mb-6 text-[clamp(2.2rem,8vw,3.5rem)] font-semibold font-Montserrat bg-gradient-to-b from-[#FFFFFF] via-[#D8B4FE] to-[#55198B] bg-clip-text text-transparent sm:mb-8"
-        />
-        <div
-          class="space-y-5 text-base font-Montserrat font-normal leading-relaxed text-slate-200 sm:text-lg lg:text-2xl"
+  <div class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.08fr,0.92fr]">
+    <div>
+      <p class="section-eyebrow">Frontend Developer | React | Astro | Node.js</p>
+      <h1 class="mt-5 text-[clamp(2.8rem,7vw,5.8rem)] font-semibold leading-[0.94] tracking-normal text-white">
+        Senior-level interfaces with speed, taste and clarity.
+      </h1>
+      <p class="section-copy mt-7">
+        I am Franklin Villanueva, a frontend developer building responsive,
+        accessible and polished web products. I turn product ideas into clean
+        interfaces, scalable component systems and fast user experiences.
+      </p>
+
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <a href="#github" class="professional-button professional-button--primary">
+          View live work
+        </a>
+        <a href="#contacto" class="professional-button professional-button--ghost">
+          Contact me
+        </a>
+        <a
+          href="/downloads/Franklin_Villanueva_Resume.pdf"
+          download="Franklin_Villanueva_Resume.pdf"
+          class="professional-button professional-button--ghost"
         >
-          <p>React • TypeScript • Astro</p>
-          <p>
-            Building fast, accessible and modern web applications with React,
-            TypeScript, Astro and Node.js. Focused on performance, clean UI
-            design and exceptional user experiences.
-          </p>
+          Download resume
+        </a>
+      </div>
 
-          <p>
-            Focused on performance, clean UI design and exceptional user
-            experiences.
-          </p>
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <a
-              href="https://github.com/Fran-web-dev"
-              class="flex h-12 w-12 items-center justify-center rounded-full bg-[#333333] transition-transform hover:scale-110"
-            >
-              <img src="/images/github.png" class="h-5 w-5 object-contain" />
-            </a>
+      <div class="mt-10 grid gap-3 sm:grid-cols-2">
+        {
+          strengths.map((item) => (
+            <div class="glass-panel rounded-lg px-4 py-3 text-sm text-slate-200">
+              {item}
+            </div>
+          ))
+        }
+      </div>
 
-            <a
-              href="mailto:franklinevillanueva4@gmail.com"
-              class="flex h-12 w-12 items-center justify-center rounded-full bg-[#EA4335] transition-transform hover:scale-110"
-            >
-              <img
-                src="/images/gmail.png"
-                alt="Gmail"
-                class="h-5 w-5 object-contain"
-              />
-            </a>
-          </div>
-          <div class="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-            <a
-              href="#contacto"
-              class="inline-flex w-full items-center justify-center rounded-lg border border-transparent bg-[rgb(85,25,139)] px-7 py-3 text-sm font-semibold text-white transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-white hover:text-[rgb(85,25,139)] hover:border-[rgb(85,25,139)] hover:shadow-xl sm:w-auto sm:px-9 sm:text-base"
-            >
-              CONTACT ME
-            </a>
-            <a
-              href="/downloads/Franklin_Villanueva_Resume.pdf"
-              download="Franklin_Villanueva_CV.pdf"
-              class="inline-flex w-full items-center justify-center rounded-lg border border-transparent bg-[rgb(85,25,139)] px-7 py-3 text-sm font-semibold text-white transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-white hover:text-[rgb(85,25,139)] hover:border-[rgb(85,25,139)] hover:shadow-xl sm:w-auto sm:px-9 sm:text-base"
-            >
-              DOWNLOAD MY RESUME
-            </a>
-          </div>
+      <div class="mt-8 flex flex-col gap-3 border-l border-[#7dd3fc]/40 pl-4 text-sm text-slate-300 sm:flex-row sm:items-center sm:gap-6">
+        <span class="inline-flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-[#9ae6b4] shadow-[0_0_18px_rgba(154,230,180,0.7)]"></span>
+          Open to frontend roles
+        </span>
+        <span>Remote-first collaboration</span>
+        <span>Clean UI, real APIs, fast delivery</span>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="glass-panel relative overflow-hidden rounded-lg p-3">
+        <img
+          src="/images/profile.png"
+          alt="Franklin Villanueva"
+          class="aspect-[4/5] w-full rounded-md object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-x-3 bottom-3 rounded-b-md bg-gradient-to-t from-[#07111f]/95 via-[#07111f]/62 to-transparent p-5">
+          <p class="section-eyebrow text-[0.65rem]">Available for remote teams</p>
+          <p class="mt-2 text-2xl font-semibold text-white">LATAM | Global</p>
         </div>
       </div>
-      <div class="relative order-1 lg:order-2">
-        <div class="absolute inset-0 blur-[120px] opacity-20"></div>
-        <div
-          class="relative mx-auto max-w-xl overflow-hidden rounded-[24px] border border-white/10 shadow-[0_40px_120px_rgba(0,0,0,0.45)] sm:rounded-[32px]"
-        >
-          <img
-            src="/images/profile.png"
-            alt="Franklin working in a futuristic digital environment"
-            class="aspect-[4/5] w-full object-cover sm:aspect-[4/4.5] lg:aspect-[4/5]"
-            loading="lazy"
-          />
-          <div
-            class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 via-black/40 to-transparent sm:p-6"
-          >
-            <p
-              class="mb-2 text-[0.65rem] uppercase tracking-[0.35em] text-white/60 sm:text-sm sm:tracking-[0.5em]"
-            >
-              Presence
-            </p>
-            <p class="text-lg font-semibold text-white sm:text-2xl">
-              Latam | Global Remote
-            </p>
-          </div>
-        </div>
+
+      <div class="glass-panel absolute -bottom-6 left-4 right-4 rounded-lg p-5 sm:left-auto sm:right-8 sm:w-72">
+        <p class="text-sm text-slate-400">Current focus</p>
+        <p class="mt-2 text-lg font-semibold text-white">
+          Building elegant React products with measurable performance.
+        </p>
       </div>
     </div>
   </div>

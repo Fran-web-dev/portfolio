@@ -1,3 +1,79 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --surface: #101521;
+    --surface-strong: #151d2b;
+    --surface-soft: #1c2637;
+    --line: rgba(255, 255, 255, 0.1);
+    --muted: #a8b3c7;
+    --cyan: #7dd3fc;
+    --green: #9ae6b4;
+    --violet: #c4b5fd;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 12% 8%, rgba(125, 211, 252, 0.16), transparent 28rem),
+      radial-gradient(circle at 88% 18%, rgba(196, 181, 253, 0.12), transparent 28rem),
+      linear-gradient(135deg, #0b1019 0%, #111827 48%, #0e1724 100%);
+  }
+
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .section-eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.32em] text-[#7dd3fc];
+  }
+
+  .section-title {
+    @apply max-w-3xl text-[clamp(2.2rem,6vw,4.8rem)] font-semibold leading-[0.98] tracking-normal text-white;
+  }
+
+  .section-copy {
+    @apply max-w-2xl text-base leading-8 text-slate-300 sm:text-lg;
+  }
+
+  .professional-button {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-transparent px-5 py-3 text-sm font-semibold transition duration-300;
+  }
+
+  .professional-button--primary {
+    @apply bg-[#7dd3fc] text-[#07111f] shadow-[0_16px_44px_rgba(125,211,252,0.18)] hover:-translate-y-0.5 hover:bg-white;
+  }
+
+  .professional-button--ghost {
+    @apply border-white/15 bg-white/[0.04] text-white hover:-translate-y-0.5 hover:border-[#7dd3fc]/50 hover:bg-white/[0.08];
+  }
+
+  .glass-panel {
+    @apply border border-white/10 bg-white/[0.055] shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl;
+  }
+
+  .metric-card {
+    @apply min-h-36 rounded-lg border border-white/10 bg-white/[0.045] p-5 transition duration-300 hover:-translate-y-1 hover:border-[#7dd3fc]/40 hover:bg-white/[0.07];
+  }
+
+  .project-card {
+    @apply rounded-lg border border-white/10 bg-white/[0.045] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#7dd3fc]/40 hover:bg-white/[0.07] hover:shadow-[0_22px_70px_rgba(0,0,0,0.28)];
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

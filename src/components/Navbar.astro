@@ -1,15 +1,17 @@
 ---
 const links = [
+  { label: "Studio", href: "#studio" },
   { label: "Skills", href: "#tecnologias" },
-  { label: "Open Source", href: "#experiencia" },
-  { label: "Projects", href: "#projects" },
+  { label: "Projects", href: "#proyectos" },
+  { label: "Experience", href: "#experiencia" },
+  { label: "GitHub", href: "#github" },
   { label: "Resume", href: "/downloads/Franklin_Villanueva_Resume.pdf" },
-  { label: "Contact Me", href: "#contacto" },
+  { label: "Contact", href: "#contacto" },
 ];
 ---
 
 <header
-  class="sticky top-0 z-50 border-b border-white/5 bg-[#101521]/90 backdrop-blur-xl"
+  class="sticky top-0 z-50 border-b border-white/10 bg-[#0b1019]/82 backdrop-blur-xl"
 >
   <div
     class="mx-auto flex max-w-7xl items-center gap-3 px-4 py-4 sm:gap-6 sm:px-6 lg:px-8"
@@ -19,14 +21,14 @@ const links = [
       class="flex shrink-0 items-center gap-3 text-lg font-semibold tracking-tight text-white transition-opacity hover:opacity-90"
       aria-label="Go to top"
     >
-      <span class="text-[1.35rem] text-violet-300">&lt;/&gt;</span>
-      <span class="hidden sm:inline">Frank Villanueva</span>
+      <span class="flex h-9 w-9 items-center justify-center rounded-md border border-[#7dd3fc]/30 bg-[#7dd3fc]/10 text-sm text-[#7dd3fc]">FV</span>
+      <span class="hidden sm:inline">Franklin Villanueva</span>
       <span class="sm:hidden">Frank</span>
     </a>
 
-    <nav aria-label="Primary navigation" class="ml-auto max-w-full">
+    <nav aria-label="Primary navigation" class="ml-auto min-w-0 flex-1 overflow-hidden">
       <ul
-        class="flex items-center gap-1 overflow-x-auto whitespace-nowrap text-xs text-slate-200 sm:gap-3 sm:text-sm lg:gap-6"
+        class="flex max-w-full items-center gap-1 overflow-x-auto whitespace-nowrap text-xs text-slate-200 sm:gap-3 sm:text-sm lg:gap-6"
       >
         {
           links.map((link) => (
@@ -36,7 +38,7 @@ const links = [
                 class:list={[
                   "inline-flex items-center rounded-full px-3 py-2 transition-colors duration-300 hover:bg-white/10 hover:text-white",
                   link.label === "Resume" &&
-                    "border border-violet-400/30 bg-violet-500/10 text-violet-100 hover:bg-violet-500/20",
+                    "border border-[#7dd3fc]/35 bg-[#7dd3fc]/10 text-[#dff7ff] hover:bg-[#7dd3fc]/20",
                 ]}
               >
                 {link.label}
