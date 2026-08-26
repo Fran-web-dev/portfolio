@@ -15,14 +15,14 @@ const fallbackRepos = [
     language: "Astro",
   },
   {
-    id: 2,
+    id: "talentflow-ats",
     name: "TalentFlow ATS",
     description:
-      "Applicant tracking workflow for managing candidates, jobs and recruiting pipeline activity.",
-    html_url: "https://talentflowatss.netlify.app/login",
+      "Applicant tracking system for managing candidates, job openings and recruiting pipeline activity.",
+    html_url: "https://github.com/Fran-web-dev/talentflow-ats",
     stargazers_count: 0,
     forks_count: 0,
-    language: "React",
+    language: "TypeScript",
   },
   {
     id: 3,
@@ -35,6 +35,17 @@ const fallbackRepos = [
     language: "JavaScript",
   },
 ];
+
+const excludedRepoNames = new Set(["listofbooks", "manager-link"]);
+const featuredRepoNames = [
+  "react-task-application",
+  "talentflow-ats",
+  "react-users-list",
+];
+
+const repoOverrides = {
+  "talentflow-ats": fallbackRepos[1],
+};
 
 export default function GitHubInsights() {
   const [profile, setProfile] = useState(null);
@@ -65,15 +76,21 @@ export default function GitHubInsights() {
           reposResponse.json(),
         ]);
 
-        const curatedRepos = reposData
+        const visibleRepos = reposData
           .filter((repo) => !repo.fork)
-          .sort(
-            (a, b) =>
-              b.stargazers_count - a.stargazers_count ||
-              new Date(b.updated_at).getTime() -
-                new Date(a.updated_at).getTime(),
-          )
-          .slice(0, 3);
+          .filter((repo) => !excludedRepoNames.has(repo.name.toLowerCase()));
+
+        const curatedRepos = featuredRepoNames
+          .map((name) => {
+            const liveRepo = visibleRepos.find(
+              (repo) => repo.name.toLowerCase() === name,
+            );
+
+            return liveRepo
+              ? { ...liveRepo, ...(repoOverrides[name] ?? {}) }
+              : repoOverrides[name];
+          })
+          .filter(Boolean);
 
         setProfile(profileData);
         setRepos(curatedRepos.length ? curatedRepos : fallbackRepos);
@@ -130,8 +147,8 @@ export default function GitHubInsights() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="section-eyebrow">Live GitHub API</p>
-            <h2 className="section-title mt-3">Proof of work, pulled live.</h2>
+            <p className="section-eyebrow">GitHub Activity</p>
+            <h2 className="section-title mt-3">Proof of work, synced from GitHub.</h2>
           </div>
           <a
             href={`https://github.com/${USERNAME}`}
@@ -150,10 +167,10 @@ export default function GitHubInsights() {
             return (
               <div className="metric-card" key={metric.label}>
                 <Icon className="text-xl text-[#7dd3fc]" aria-hidden="true" />
-                <span className="mt-5 text-3xl font-semibold text-white">
+                <span className="mt-5 block text-3xl font-semibold leading-none text-white">
                   {metric.value}
                 </span>
-                <span className="mt-1 text-sm text-slate-400">
+                <span className="mt-2 block text-sm leading-5 text-slate-400">
                   {metric.label}
                 </span>
               </div>
@@ -201,7 +218,7 @@ export default function GitHubInsights() {
             ? "Connecting to GitHub..."
             : status === "fallback"
               ? "Showing curated repositories while the GitHub API is unavailable."
-              : "Repository data is loaded directly from the GitHub REST API."}
+              : "Repository stats are synced from the GitHub REST API."}
         </p>
       </div>
     </section>
