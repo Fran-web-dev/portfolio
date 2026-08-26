@@ -1,21 +1,31 @@
 import { useEffect, useMemo, useState } from "react";
 import { FiGitBranch, FiGithub, FiStar, FiUsers } from "react-icons/fi";
 
-const USERNAME = "Fran2007";
+const USERNAME = "Fran-web-dev";
 
 const fallbackRepos = [
   {
     id: 1,
-    name: "manager-link",
+    name: "portfolio",
     description:
-      "Full stack link manager with authentication, reusable UI patterns and a MongoDB-backed workflow.",
-    html_url: "https://github.com/Fran2007/manager-link",
+      "Astro portfolio with polished project sections, live GitHub data and recruiter-focused presentation.",
+    html_url: "https://github.com/Fran-web-dev/portfolio",
     stargazers_count: 0,
     forks_count: 0,
-    language: "TypeScript",
+    language: "Astro",
   },
   {
     id: 2,
+    name: "TalentFlow ATS",
+    description:
+      "Applicant tracking workflow for managing candidates, jobs and recruiting pipeline activity.",
+    html_url: "https://talentflowatss.netlify.app/login",
+    stargazers_count: 0,
+    forks_count: 0,
+    language: "React",
+  },
+  {
+    id: 3,
     name: "react-task-application",
     description:
       "Task management interface focused on fast CRUD flows, component structure and responsive UX.",
@@ -23,16 +33,6 @@ const fallbackRepos = [
     stargazers_count: 0,
     forks_count: 0,
     language: "JavaScript",
-  },
-  {
-    id: 3,
-    name: "ListOfBooks",
-    description:
-      "Interactive reading-list experience with filtering, state management and clean mobile layouts.",
-    html_url: "https://listsofbooks.netlify.app/",
-    stargazers_count: 0,
-    forks_count: 0,
-    language: "React",
   },
 ];
 
