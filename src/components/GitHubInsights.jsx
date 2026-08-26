@@ -15,11 +15,11 @@ const fallbackRepos = [
     language: "Astro",
   },
   {
-    id: "talentflow-ats",
-    name: "TalentFlow ATS",
+    id: "jobtracker",
+    name: "jobTracker",
     description:
       "Applicant tracking system for managing candidates, job openings and recruiting pipeline activity.",
-    html_url: "https://github.com/Fran-web-dev/talentflow-ats",
+    html_url: "https://github.com/Fran-web-dev/jobTracker",
     stargazers_count: 0,
     forks_count: 0,
     language: "TypeScript",
@@ -39,12 +39,12 @@ const fallbackRepos = [
 const excludedRepoNames = new Set(["listofbooks", "manager-link"]);
 const featuredRepoNames = [
   "react-task-application",
-  "talentflow-ats",
+  "jobtracker",
   "react-users-list",
 ];
 
 const repoOverrides = {
-  "talentflow-ats": fallbackRepos[1],
+  jobtracker: fallbackRepos[1],
 };
 
 export default function GitHubInsights() {
