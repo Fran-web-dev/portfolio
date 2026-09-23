@@ -2,21 +2,27 @@
 const principles = [
   {
     label: "01",
-    title: "Clarity before decoration",
+    title: "Clean interfaces",
     description:
-      "Interfaces are designed around what the user needs to understand, decide and do next.",
+      "I focus on clear layouts, intuitive interactions and interfaces that make the user's next step obvious.",
   },
   {
     label: "02",
-    title: "Motion with purpose",
+    title: "Reusable components",
     description:
-      "Interactions are quiet, fast and intentional, supporting focus instead of stealing it.",
+      "I build modular components that can be reused, adapted and maintained as the project grows.",
   },
   {
     label: "03",
-    title: "Systems that can grow",
+    title: "Real functionality",
     description:
-      "Components, spacing, states and data flows are structured so products stay maintainable.",
+      "My projects connect interfaces with APIs, databases and backend services—not just static designs.",
+  },
+  {
+    label: "04",
+    title: "Built to improve",
+    description:
+      "I continuously refine my projects through testing, feedback and better development practices.",
   },
 ];
 
@@ -32,26 +38,27 @@ const signals = [
   id="studio"
   class="relative overflow-hidden bg-[#0b1019] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
 >
-  <div class="studio-grid pointer-events-none absolute inset-0 opacity-45"></div>
+  <div class="studio-grid pointer-events-none absolute inset-0 opacity-45">
+  </div>
 
   <div class="relative mx-auto max-w-7xl">
     <div class="grid gap-10 lg:grid-cols-[0.92fr,1.08fr] lg:gap-14">
       <div>
         <p class="section-eyebrow">Creative direction</p>
         <h2 class="section-title mt-3">
-          A portfolio with a product-engineering signature.
+          I'm a developer who enjoys turning ideas into real products.
         </h2>
         <p class="section-copy mt-6">
-          The goal is not to look like every developer template. This portfolio
-          presents a calm, premium interface language: focused content, elegant
-          motion, live data and a clear engineering point of view.
+          I build modern web applications with React, TypeScript and other
+          modern technologies. My focus is creating interfaces that are clean,
+          responsive and useful, while keeping the underlying code maintainable.
         </p>
 
         <div class="mt-8 grid gap-3 sm:grid-cols-2">
           {
             signals.map((signal) => (
               <div class="signal-pill">
-                <span></span>
+                <span />
                 {signal}
               </div>
             ))
@@ -60,10 +67,14 @@ const signals = [
       </div>
 
       <div class="studio-panel glass-panel rounded-lg p-4 sm:p-6">
-        <div class="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
+        <div
+          class="mb-6 flex items-center justify-between border-b border-white/10 pb-4"
+        >
           <div>
             <p class="text-sm font-semibold text-white">Interface Studio</p>
-            <p class="mt-1 text-xs text-slate-400">Design x Frontend x Product</p>
+            <p class="mt-1 text-xs text-slate-400">
+              Design x Frontend x Product
+            </p>
           </div>
           <div class="flex gap-2">
             <span class="h-2.5 w-2.5 rounded-full bg-[#fda4af]"></span>
@@ -76,7 +87,9 @@ const signals = [
           {
             principles.map((item) => (
               <article class="studio-card">
-                <span class="text-sm font-semibold text-[#7dd3fc]">{item.label}</span>
+                <span class="text-sm font-semibold text-[#7dd3fc]">
+                  {item.label}
+                </span>
                 <div>
                   <h3 class="text-lg font-semibold text-white">{item.title}</h3>
                   <p class="mt-2 text-sm leading-7 text-slate-300">
@@ -86,25 +99,6 @@ const signals = [
               </article>
             ))
           }
-        </div>
-
-        <div class="mt-5 rounded-lg border border-white/10 bg-[#07111f]/80 p-4">
-          <div class="flex items-center justify-between gap-3 text-xs uppercase tracking-[0.24em] text-slate-500">
-            <span>Build signal</span>
-            <span>Production-ready</span>
-          </div>
-          <div class="mt-4 grid grid-cols-12 gap-1">
-            {
-              Array.from({ length: 24 }).map((_, index) => (
-                <span
-                  class="signal-bar"
-                  style={`--bar-delay: ${index * 80}ms; --bar-height: ${
-                    28 + ((index * 17) % 44)
-                  }%;`}
-                ></span>
-              ))
-            }
-          </div>
         </div>
       </div>
     </div>
@@ -151,7 +145,12 @@ const signals = [
     inset: 0;
     border-radius: inherit;
     pointer-events: none;
-    background: linear-gradient(135deg, rgba(125, 211, 252, 0.18), transparent 35%, rgba(154, 230, 180, 0.12));
+    background: linear-gradient(
+      135deg,
+      rgba(125, 211, 252, 0.18),
+      transparent 35%,
+      rgba(154, 230, 180, 0.12)
+    );
     opacity: 0.55;
   }
 
@@ -182,7 +181,11 @@ const signals = [
   .signal-bar {
     height: 4.5rem;
     border-radius: 999px;
-    background: linear-gradient(to top, rgba(125, 211, 252, 0.14), rgba(125, 211, 252, 0.78));
+    background: linear-gradient(
+      to top,
+      rgba(125, 211, 252, 0.14),
+      rgba(125, 211, 252, 0.78)
+    );
     transform-origin: bottom;
     transform: scaleY(var(--bar-height));
     animation: studioPulse 2.8s ease-in-out infinite;
